@@ -1,0 +1,12 @@
+PODS:
+  - Parsimmon (0.3.4)
+
+DEPENDENCIES:
+  - Parsimmon (~> 0.3.4)
+
+SPEC CHECKSUMS:
+  Parsimmon: 48ca7a7c78261b34b215c17d1a13543d4f72cc51
+
+PODFILE CHECKSUM: 0f1aacf3d7a67ce5d3925febccb7268f8d31336e
+
+COCOAPODS: 1.0.0

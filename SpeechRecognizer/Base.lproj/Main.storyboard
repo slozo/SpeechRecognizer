@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Rf-Yc-GTT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Presenting View Controller-->
+        <scene sceneID="RD0-0d-QgP">
+            <objects>
+                <viewController id="6Rf-Yc-GTT" customClass="MyPresentingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zJC-yM-eZB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Exn-0e-zhF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LCy-eS-Vvi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqv-vX-AwQ">
+                                <state key="normal" title="Speak To Me!"/>
+                                <connections>
+                                    <action selector="dismissPopover:" destination="6Rf-Yc-GTT" eventType="touchUpInside" id="NAk-MR-lIh"/>
+                                    <action selector="presentPopover:" destination="6Rf-Yc-GTT" eventType="touchDown" id="fwb-SN-VDe"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rrz-qt-Zbv">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" flightNumber="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="rrz-qt-Zbv" secondAttribute="leading" id="14y-Ff-Ao5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rrz-qt-Zbv" secondAttribute="trailing" id="1Xn-Mi-tz8"/>
+                            <constraint firstItem="yqv-vX-AwQ" firstAttribute="top" secondItem="rrz-qt-Zbv" secondAttribute="bottom" constant="8" id="LGc-Rr-Cca"/>
+                            <constraint firstItem="Exn-0e-zhF" firstAttribute="top" secondItem="yqv-vX-AwQ" secondAttribute="bottom" constant="20" id="LPQ-4k-JrK"/>
+                            <constraint firstItem="rrz-qt-Zbv" firstAttribute="top" secondItem="zJC-yM-eZB" secondAttribute="bottom" id="OyU-9N-oXT"/>
+                            <constraint firstItem="yqv-vX-AwQ" firstAttribute="centerX" secondItem="LCy-eS-Vvi" secondAttribute="centerX" id="mWM-3R-vQm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTextView" destination="rrz-qt-Zbv" id="Civ-a0-PBF"/>
+                        <segue destination="BYZ-38-t0r" kind="popoverPresentation" identifier="popover" popoverAnchorView="yqv-vX-AwQ" id="iXD-7j-ShY">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2f-qD-HAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-631.20000000000005" y="145.27736131934034"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="recordViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A9l-ER-F7f">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdg-zf-rGK">
+                                <color key="backgroundColor" red="1" green="0.1396697898" blue="0.22787170770000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="uBd-h7-ZwW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xdg-zf-rGK" secondAttribute="trailing" id="0IQ-1P-6iY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xdg-zf-rGK" secondAttribute="bottom" constant="20" id="3Cr-pQ-utK"/>
+                            <constraint firstItem="A9l-ER-F7f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Kdy-cP-OwT"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Xdg-zf-rGK" secondAttribute="leading" id="fUb-mq-85a"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="A9l-ER-F7f" secondAttribute="leading" id="g8Z-aW-4W2"/>
+                            <constraint firstItem="Xdg-zf-rGK" firstAttribute="top" secondItem="A9l-ER-F7f" secondAttribute="bottom" constant="8" id="hYv-pM-TxA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A9l-ER-F7f" secondAttribute="trailing" id="vqW-5i-m6i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rectangle" destination="Xdg-zf-rGK" id="To1-ox-t7f"/>
+                        <outlet property="textView" destination="A9l-ER-F7f" id="L7S-RR-hEQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
